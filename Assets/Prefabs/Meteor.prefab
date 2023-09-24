@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8738041681289753699}
   - component: {fileID: 8738041681289753696}
-  - component: {fileID: 8738041681289753697}
-  - component: {fileID: 8738041681289753702}
+  - component: {fileID: 7870405749912216020}
+  - component: {fileID: 6684579064443667846}
   m_Layer: 0
   m_Name: Meteor
   m_TagString: Enemy
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!54 &8738041681289753697
+--- !u!54 &7870405749912216020
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,7 +99,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &8738041681289753702
+--- !u!135 &6684579064443667846
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -110,5 +110,5 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.3306336
-  m_Center: {x: -0.25594115, y: -2.063202, z: 0}
+  m_Radius: 2.6868439
+  m_Center: {x: -0.033854008, y: 0.14866734, z: 0}

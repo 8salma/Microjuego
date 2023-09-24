@@ -33,14 +33,14 @@ public class Bullet : MonoBehaviour
     {
         // llamamos a esta función cada vez que ganamos puntos para actualizar el marcador
         GameObject go = GameObject.FindGameObjectWithTag("UI");
-        go.GetComponent<Text>().text = "Score: " + Player.SCORE;
+        go.GetComponent<Text>().text = "Puntos: " + Player.SCORE;
     }
 
     private void OnCollisionEnter (Collision collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("toco");
+            IncreaseScore();
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }

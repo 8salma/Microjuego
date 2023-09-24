@@ -10,15 +10,21 @@ public class Player : MonoBehaviour
     Vector3 thrustDirection;
     Rigidbody _rigidbody;
 
+    float xBorderLimit = 14f;
+    float yBorderLimit = 11f;
+
+
+
     public GameObject gun, bulletPrefab;
 
-    public static int SCORE = 0; // Define la variable SCORE como estática.
+    public static int SCORE = 0;
 
     void Start()
     {
         // rigidbody nos permite aplicar fuerzas en el jugador
         _rigidbody = GetComponent<Rigidbody>();
     }
+
     private void FixedUpdate()
     {
         // obtenemos las pulsaciones de teclado
@@ -33,10 +39,12 @@ public class Player : MonoBehaviour
 
         // rotamos con el eje "Rotate" negativo para que la dirección sea correcta
         transform.Rotate(Vector3.forward, -rotation * rotationSpeed);
-        
+    }
 
+    private void Update()
+    {
 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             GameObject bullet = Instantiate(bulletPrefab, gun.transform.position, Quaternion.identity);
 
@@ -46,13 +54,38 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter (Collision collision)
+    private void posFuera()
+    {
+        var newPos = transform.position;
+
+        if (newPos.x > xBorderLimit)
+        {
+            newPos.x = -xBorderLimit + 1;
+        }
+        else if (newPos.x < -xBorderLimit)
+        {
+            newPos.x = xBorderLimit + 1;
+        }
+        else if (newPos.y > yBorderLimit)
+        {
+            newPos.y = -yBorderLimit + 1;
+        }
+        else if (newPos.y < -yBorderLimit)
+        {
+            newPos.y = yBorderLimit - 1;
+        }
+
+        transform.position = newPos;
+
+    }
+
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            SCORE = 0;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-
         else
         {
             Debug.Log("He colisionado con otra cosa...");
