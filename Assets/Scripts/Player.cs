@@ -10,8 +10,8 @@ public class Player : MonoBehaviour
     Vector3 thrustDirection;
     Rigidbody _rigidbody;
 
-    float xBorderLimit = 14f;
-    float yBorderLimit = 11f;
+    float xBorderLimit = 18f;
+    float yBorderLimit = 9f;
 
 
 
@@ -43,19 +43,6 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            GameObject bullet = Instantiate(bulletPrefab, gun.transform.position, Quaternion.identity);
-
-            Bullet balaScript = bullet.GetComponent<Bullet>();
-
-            balaScript.targetVector = transform.right;
-        }
-    }
-
-    private void posFuera()
-    {
         var newPos = transform.position;
 
         if (newPos.x > xBorderLimit)
@@ -64,7 +51,7 @@ public class Player : MonoBehaviour
         }
         else if (newPos.x < -xBorderLimit)
         {
-            newPos.x = xBorderLimit + 1;
+            newPos.x = xBorderLimit - 1;
         }
         else if (newPos.y > yBorderLimit)
         {
@@ -74,9 +61,16 @@ public class Player : MonoBehaviour
         {
             newPos.y = yBorderLimit - 1;
         }
-
         transform.position = newPos;
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            GameObject bullet = Instantiate(bulletPrefab, gun.transform.position, Quaternion.identity);
+
+            Bullet balaScript = bullet.GetComponent<Bullet>();
+
+            balaScript.targetVector = transform.right;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
