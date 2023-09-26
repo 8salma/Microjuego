@@ -2732,7 +2732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooledObjects: []
-  amountPool: 50
+  amountPool: 150
   bulletPrefab: {fileID: 5552039473572736972, guid: dc8c96e151129ed4ea63c953a62fa2a6,
     type: 3}
 --- !u!4 &1748880693
