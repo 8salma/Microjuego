@@ -68,33 +68,33 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11270}
+      Script: {instanceID: 11292}
     - Class: 114
-      Script: {instanceID: 11294}
+      Script: {instanceID: 11582}
     - Class: 114
-      Script: {instanceID: 11584}
+      Script: {instanceID: 11640}
     - Class: 114
-      Script: {instanceID: 11642}
+      Script: {instanceID: 12312}
     - Class: 114
-      Script: {instanceID: 12314}
+      Script: {instanceID: 12366}
     - Class: 114
-      Script: {instanceID: 12368}
+      Script: {instanceID: 13032}
     - Class: 114
-      Script: {instanceID: 13382}
+      Script: {instanceID: 13384}
     - Class: 114
-      Script: {instanceID: 13402}
+      Script: {instanceID: 13404}
     - Class: 114
-      Script: {instanceID: 13716}
+      Script: {instanceID: 13718}
     - Class: 114
-      Script: {instanceID: 13820}
+      Script: {instanceID: 13822}
     - Class: 114
-      Script: {instanceID: 14116}
+      Script: {instanceID: 14118}
     - Class: 114
-      Script: {instanceID: 14290}
+      Script: {instanceID: 14292}
     - Class: 114
-      Script: {instanceID: 14460}
+      Script: {instanceID: 14462}
     - Class: 114
-      Script: {instanceID: 14512}
+      Script: {instanceID: 14514}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -137,35 +137,35 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11270}
+      Script: {instanceID: 11292}
     - Class: 114
-      Script: {instanceID: 11294}
+      Script: {instanceID: 11320}
     - Class: 114
-      Script: {instanceID: 11322}
+      Script: {instanceID: 11582}
     - Class: 114
-      Script: {instanceID: 11584}
+      Script: {instanceID: 11626}
     - Class: 114
-      Script: {instanceID: 11628}
+      Script: {instanceID: 11640}
     - Class: 114
-      Script: {instanceID: 11642}
+      Script: {instanceID: 12312}
     - Class: 114
-      Script: {instanceID: 12314}
+      Script: {instanceID: 12568}
     - Class: 114
-      Script: {instanceID: 12570}
+      Script: {instanceID: 12640}
     - Class: 114
       Script: {instanceID: 12932}
     - Class: 114
-      Script: {instanceID: 13382}
+      Script: {instanceID: 13032}
     - Class: 114
-      Script: {instanceID: 13716}
+      Script: {instanceID: 13384}
     - Class: 114
-      Script: {instanceID: 13820}
+      Script: {instanceID: 13718}
     - Class: 114
-      Script: {instanceID: 14100}
+      Script: {instanceID: 13822}
     - Class: 114
-      Script: {instanceID: 14460}
+      Script: {instanceID: 14102}
     - Class: 114
-      Script: {instanceID: 65728}
+      Script: {instanceID: 14462}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -189,12 +189,6 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
-  - hash:
-      serializedVersion: 2
-      Hash: 5f1752ed2092162f016c19510c28a8b9
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Button
   - hash:
       serializedVersion: 2
       Hash: 4bc4346a71a8df53a6b106f68ef3a190
@@ -491,6 +485,12 @@ ScriptsOnlyBuild:
     className: gameManagerScript
   - hash:
       serializedVersion: 2
+      Hash: a660ed8777ff3051d22327d1283fdc97
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MiniAsteroid
+  - hash:
+      serializedVersion: 2
       Hash: d4020bafcd3ccbb5601a6e6c8ac78be0
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -549,6 +549,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ChatController
+  - hash:
+      serializedVersion: 2
+      Hash: 5f1752ed2092162f016c19510c28a8b9
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Button
   - hash:
       serializedVersion: 2
       Hash: f84d945e5e1ca985698660fc26e9657f
@@ -915,12 +921,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: a660ed8777ff3051d22327d1283fdc97
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: MiniAsteroid
   platform: 5
   scenePathNames:
   - Assets/Scenes/HomeScene.unity
