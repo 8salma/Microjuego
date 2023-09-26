@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject asteroidPrefab;
-
+    
     float spawnRatePerMinute = 30f;
     float spawnRateIncrement = 1f;
 

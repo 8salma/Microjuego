@@ -13,16 +13,24 @@ public class Player : MonoBehaviour
     float xBorderLimit = 18f;
     float yBorderLimit = 9f;
 
+    public GameObject gameOverScene;
+    public GameObject pauseMenu;
 
-
-    public GameObject gun, bulletPrefab;
+    public GameObject gun;
 
     public static int SCORE = 0;
+
+    private AudioSource sonidoDisparo;
+    public AudioSource sonidoGameOver;
+
+    public GameObject gameManager;
 
     void Start()
     {
         // rigidbody nos permite aplicar fuerzas en el jugador
         _rigidbody = GetComponent<Rigidbody>();
+        sonidoDisparo = GetComponent<AudioSource>();
+        
     }
 
     private void FixedUpdate()
@@ -43,6 +51,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        // espacio infinito
         var newPos = transform.position;
 
         if (newPos.x > xBorderLimit)
@@ -63,22 +72,56 @@ public class Player : MonoBehaviour
         }
         transform.position = newPos;
 
+        // disparo
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            GameObject bullet = Instantiate(bulletPrefab, gun.transform.position, Quaternion.identity);
+            sonidoDisparo.Play();
+            GameObject bullet = ObjectPool.instance.GetPooledObject();
 
-            Bullet balaScript = bullet.GetComponent<Bullet>();
+            if (bullet != null)
+            {
+                bullet.transform.position = gun.transform.position;
 
-            balaScript.targetVector = transform.right;
+                bullet.SetActive(true);
+
+                Bullet balaScript = bullet.GetComponent<Bullet>();
+
+                balaScript.targetVector = transform.right;
+            }
         }
+
+        // pausar con escape
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0;
+        }
+
+        // reanudar con escape desde la pantalla de pausa
+        /*
+        if (pauseMenu.activeSelf)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                pauseMenu.SetActive(false);
+                Time.timeScale = 1;
+            }
+        }
+        */
+
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        // muerte
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Mini"))
         {
+            AudioSource collisionAudio = collision.gameObject.GetComponent<AudioSource>();
+            collisionAudio.Play();
             SCORE = 0;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            Time.timeScale = 0;
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            gameOverScene.SetActive(true);
         }
         else
         {

@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5552039473572736974}
   - component: {fileID: 5552039473572736975}
-  - component: {fileID: -6086731063504382241}
   - component: {fileID: 6095417590885673411}
   - component: {fileID: 6470170043501381185}
+  - component: {fileID: -570858217882481573}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -84,21 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-6086731063504382241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5552039473572736972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efab78c1ae82ccc47a6d382c03f380c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  maxLifeTime: 3
-  targetVector: {x: 0, y: 0, z: 0}
 --- !u!54 &6095417590885673411
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -110,7 +95,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -128,3 +113,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.04, y: 0.04, z: 0.04}
   m_Center: {x: -0.000000004967054, y: -0.00023022543, z: 0}
+--- !u!114 &-570858217882481573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5552039473572736972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efab78c1ae82ccc47a6d382c03f380c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  maxLifeTime: 3
+  targetVector: {x: 0, y: 0, z: 0}
+  miniAsteroidPrefab: {fileID: 121497867103930697, guid: e62377065fd028f4cad2c9c4007acd9d,
+    type: 3}
+  offset: {x: 0.1, y: 0.1}
+  angulo: 45
